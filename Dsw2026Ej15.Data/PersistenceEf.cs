@@ -30,6 +30,7 @@ namespace Dsw2026Ej15.Data
 
         public Doctor AddDoctor(Doctor doctor)
         {
+            _context.Specialities.Attach(doctor.Speciality);
             _context.Doctors.Add(doctor);
             _context.SaveChanges();
 
