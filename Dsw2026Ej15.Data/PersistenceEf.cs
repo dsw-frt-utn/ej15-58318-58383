@@ -29,12 +29,13 @@ namespace Dsw2026Ej15.Data
         }
 
         public Doctor AddDoctor(Doctor doctor)
-        {
-            _context.Doctors.Add(doctor);
-            _context.SaveChanges();
+{
+    _context.Specialities.Attach(doctor.Speciality);
+    _context.Doctors.Add(doctor);
+    _context.SaveChanges();
 
-            return doctor;
-        }
+    return doctor;
+}
 
         public Doctor? GetDoctorById(Guid id)
         {
